@@ -1,0 +1,89 @@
+[gd_scene load_steps=11 format=4 uid="uid://b57d3j6732sk7"]
+
+[ext_resource type="TileSet" uid="uid://bhym855glf4b7" path="res://sprite/tilesets/node_2d.tres" id="1_7e5qt"]
+[ext_resource type="Script" uid="uid://cl3136ckkge" path="res://scripts/scripts_doors/hall_to_corridor.gd" id="2_3bgyu"]
+[ext_resource type="Script" uid="uid://dqk2tsokstbx2" path="res://scripts/scripts_character/character_hall.gd" id="2_f612h"]
+[ext_resource type="Texture2D" uid="uid://dnxt25ieh0dsh" path="res://sprite/gun/gun_right.png" id="4_3bgyu"]
+[ext_resource type="Script" uid="uid://d1blgj4alvm1x" path="res://scripts/gun.gd" id="4_q1d8p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
+size = Vector2(10, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1d8p"]
+size = Vector2(11, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
+size = Vector2(8, 15)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0e48y"]
+load_path = "res://.godot/imported/right.png-0a623adab5f3a6a8d9b72306e51339c7.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3bgyu"]
+radius = 9.055386
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Casa" type="Node2D" parent="."]
+
+[node name="chao" type="TileMapLayer" parent="Casa"]
+tile_map_data = PackedByteArray("AAD/////AAABAAEAAAD//wAAAAABAAEAAAAAAAAAAAABAAEAAAAAAP//AAABAAEAAAD+//7/AAABAAEAAAD+////AAABAAEAAAABAP//AAABAAEAAAABAP7/AAABAAEAAAAAAP7/AAABAAEAAAD///7/AAABAAEAAAACAP7/AAABAAEAAAADAP//AAABAAEAAAADAP7/AAABAAEAAAABAP3/AAABAAEAAAAAAP3/AAABAAEAAAD///3/AAABAAEAAAD+//3/AAABAAEAAAD9//7/AAABAAEAAAD9////AAABAAEAAAD8////AAABAAEAAAD8//7/AAABAAEAAAD8//3/AAABAAEAAAD9//3/AAABAAEAAAACAP3/AAABAAEAAAADAP3/AAABAAEAAAD+/wAAAAABAAEAAAD9/wAAAAABAAEAAAD9/wEAAAABAAEAAAD8/wAAAAABAAEAAAD8/wEAAAABAAEAAAD+/wEAAAABAAEAAAD//wEAAAABAAEAAAAAAAEAAAABAAEAAAABAAEAAAABAAEAAAABAAAAAAABAAEAAAACAAAAAAABAAEAAAACAP//AAABAAEAAAACAAEAAAABAAEAAAADAAAAAAABAAEAAAADAAEAAAABAAEAAAD7////AAABAAEAAAA=")
+tile_set = ExtResource("1_7e5qt")
+
+[node name="walls" type="TileMapLayer" parent="Casa"]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAD8//z/AAABAAAAAAD9//z/AAABAAAAAAD+//z/AAABAAAAAAD///z/AAABAAAAAAAAAPz/AAABAAAAAAABAPz/AAABAAAAAAACAPz/AAABAAAAAAADAPz/AAABAAAAAAADAAIAAAABAAIAAAACAAIAAAABAAIAAAABAAIAAAABAAIAAAAAAAIAAAABAAIAAAD//wIAAAABAAIAAAD+/wIAAAABAAIAAAD9/wIAAAABAAIAAAD8/wIAAAABAAIAAAAEAAEAAAACAAEAAAAEAAAAAAACAAEAAAAEAP//AAACAAEAAAAEAP7/AAACAAEAAAAEAP3/AAACAAEAAAD7//3/AAAAAAEAAAD7//7/AAAEAAEAAAD7/wAAAAAEAAAAAAD7/wEAAAAAAAEAAAD7//z/AAAAAAAAAAAEAPz/AAACAAAAAAD7/wIAAAAAAAIAAAAEAAIAAAACAAIAAAA=")
+tile_set = ExtResource("1_7e5qt")
+
+[node name="Area2D" type="Area2D" parent="Casa"]
+script = ExtResource("2_3bgyu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Casa/Area2D"]
+position = Vector2(-64, -8)
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="Gun" type="StaticBody2D" parent="."]
+position = Vector2(-90.94, 0)
+script = ExtResource("4_q1d8p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gun"]
+process_mode = 3
+physics_interpolation_mode = 2
+shape = SubResource("RectangleShape2D_q1d8p")
+one_way_collision = true
+one_way_collision_margin = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Gun"]
+texture_filter = 1
+scale = Vector2(0.53, 0.53)
+texture = ExtResource("4_3bgyu")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("2_f612h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_0hol4")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture_filter = 1
+position = Vector2(0.49999908, -3.874303e-07)
+scale = Vector2(0.90624994, 0.87499994)
+texture = SubResource("CompressedTexture2D_0e48y")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(6.75, 6.75)
+limit_enabled = false
+
+[node name="Range" type="Area2D" parent="CharacterBody2D" groups=["pickable"]]
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Range"]
+shape = SubResource("CircleShape2D_3bgyu")
+
+[node name="HandPosition" type="Marker2D" parent="CharacterBody2D"]
+position = Vector2(0, 2.305)
+
+[connection signal="body_entered" from="Casa/Area2D" to="Casa/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Casa/Area2D" to="Casa/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="CharacterBody2D/Range" to="CharacterBody2D" method="_on_range_body_entered"]
+[connection signal="body_exited" from="CharacterBody2D/Range" to="CharacterBody2D" method="_on_range_body_exited"]

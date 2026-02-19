@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://3hwhlruj5p4k"]
+
+[ext_resource type="Script" uid="uid://djdlri41cqu2r" path="res://scripts/scripts_character/character_corridor.gd" id="1_k5oum"]
+[ext_resource type="Script" uid="uid://147yjsfmsnpy" path="res://scripts/scripts_doors/corridor_to_hall.gd" id="1_wjt08"]
+[ext_resource type="Texture2D" uid="uid://dtvigspc78uhr" path="res://sprite/characters/left.png" id="2_k5oum"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wjt08"]
+size = Vector2(10, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k5oum"]
+size = Vector2(8, 15)
+
+[sub_resource type="QuadMesh" id="QuadMesh_wjt08"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rbtfv"]
+size = Vector2(78, 11)
+
+[node name="Corredor" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-53.44, -1)
+script = ExtResource("1_wjt08")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(59.44, -1)
+shape = SubResource("RectangleShape2D_wjt08")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
+script = ExtResource("1_k5oum")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_k5oum")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D2"]
+texture_filter = 1
+position = Vector2(0.49999908, -3.874303e-07)
+scale = Vector2(0.90624994, 0.87499994)
+texture = ExtResource("2_k5oum")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D2"]
+zoom = Vector2(7, 7)
+limit_enabled = false
+
+[node name="casa" type="Node2D" parent="."]
+position = Vector2(5, -1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="casa"]
+position = Vector2(-6.505, 0.73)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="casa/StaticBody2D"]
+position = Vector2(-26, 14.000001)
+scale = Vector2(77.75, 11.5)
+mesh = SubResource("QuadMesh_wjt08")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="casa/StaticBody2D"]
+position = Vector2(-26, 14)
+shape = SubResource("RectangleShape2D_rbtfv")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

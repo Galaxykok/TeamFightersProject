@@ -1,0 +1,77 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1771541220
+icon.svg::CompressedTexture2D::1555041827982840949::1768958623::1768958630::1::::<><><>0<>0<>c6b487fc735f3a7fae71b1e41d0eb13a<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://prefabs/::1771383237
+bullet.gd::GDScript::8092343490603009486::1771383237::0::1::::<>Node2D<><>0<>0<><>::
+bullet.tscn::PackedScene::485063818455450184::1771383229::0::1::::<><><>0<>0<><>::uid://dgtj038e4sapt::::res://sprite/gun/bullet.png<>uid://dnj8ykry6rngw::::res://prefabs/bullet.gd
+::res://scenes/::1771385082
+corredor.tscn::PackedScene::1981087145481981280::1771383108::0::1::::<><><>0<>0<><>::uid://djdlri41cqu2r::::res://scripts/scripts_character/character_corridor.gd<>uid://147yjsfmsnpy::::res://scripts/scripts_doors/corridor_to_hall.gd<>uid://dtvigspc78uhr::::res://sprite/characters/left.png
+hall.tscn::PackedScene::4558378756263143444::1771385082::0::1::::<><><>0<>0<><>::uid://bhym855glf4b7::::res://sprite/tilesets/node_2d.tres<>uid://cl3136ckkge::::res://scripts/scripts_doors/hall_to_corridor.gd<>uid://dqk2tsokstbx2::::res://scripts/scripts_character/character_hall.gd<>uid://dnxt25ieh0dsh::::res://sprite/gun/gun_right.png<>uid://d1blgj4alvm1x::::res://scripts/gun.gd
+::res://scripts/::1771383138
+GameState.gd::GDScript::1203402168775169565::1769227991::0::1::::<>Node<><>0<>0<><>::
+gun.gd::GDScript::8986915482631084627::1771383138::0::1::::Pickable<>StaticBody2D<><>0<>0<><>::
+::res://scripts/scripts_character/::1771356141
+character_corridor.gd::GDScript::7797853488671364119::1769228454::0::1::::<>CharacterBody2D<><>0<>0<><>::
+character_hall.gd::GDScript::8304601583244028069::1771356141::0::1::::<>CharacterBody2D<><>0<>0<><>::
+::res://scripts/scripts_doors/::1769228333
+corridor_to_hall.gd::GDScript::1886763193039386810::1769228333::0::1::::<>Area2D<><>0<>0<><>::
+hall_to_corridor.gd::GDScript::4848054931090760::1769228234::0::1::::<>Area2D<><>0<>0<><>::
+::res://sprite/::1769190411
+::res://sprite/characters/::1768968475
+back.png::CompressedTexture2D::6385403996210040980::1768961336::1768966044::1::::<><><>0<>0<>6b8d1d095d8abaca1da533c88f7235a3<>res://.godot/imported/back.png-61194b572d7cf1146889b8794e713ad9.ctex::
+front.png::CompressedTexture2D::6917726253040975625::1768961336::1768966044::1::::<><><>0<>0<>9af49ed4fd388ea7025a44be96e67cfe<>res://.godot/imported/front.png-28cdcbfd0e54025c8e7e97532ac4c702.ctex::
+left.png::CompressedTexture2D::8536699432470057687::1768961336::1768966044::1::::<><><>0<>0<>10cfa4f33cd58c73ea30bcb4400e6f40<>res://.godot/imported/left.png-1ed8b7c92617a2cf7e8855baaaadbc24.ctex::
+right.png::CompressedTexture2D::3892120620906525258::1768968475::1768968475::1::::<><><>0<>0<>8fceaae1e75a546f03649c9ce6794d51<>res://.godot/imported/right.png-0a623adab5f3a6a8d9b72306e51339c7.ctex::
+::res://sprite/gun/::1771357057
+bullet.png::CompressedTexture2D::7620210909870706993::1769223042::1769223042::1::::<><><>0<>0<>300a326e46a4f06373e8751babc3ce17<>res://.godot/imported/bullet.png-b92e4f8d6da54c8b148903e784c74784.ctex::
+gun_back.png::CompressedTexture2D::5288865043273181735::1771357057::1771357057::1::::<><><>0<>0<>17516f6a91ca49ed2d163efb5e619c67<>res://.godot/imported/gun_back.png-f883eb1077761bd7cd0381639b15c620.ctex::
+gun_front.png::CompressedTexture2D::3282516953514280487::1769223042::1769223042::1::::<><><>0<>0<>7fcfc619a0bd4a1a6b1b3959038b7be2<>res://.godot/imported/gun_front.png-7ee235c5034883d102f67646abedf796.ctex::
+gun_left.png::CompressedTexture2D::302331337708146448::1769223042::1769223042::1::::<><><>0<>0<>ec6ce86199f9c9546f3d0e1d85c36868<>res://.godot/imported/gun_left.png-3f76b8017dd60161f54eb0be34e52a99.ctex::
+gun_right.png::CompressedTexture2D::8120401134266116399::1769223042::1769223042::1::::<><><>0<>0<>92b29a6357719e539adc158a3b9def86<>res://.godot/imported/gun_right.png-2112cf36443dbd3cd08a5649deb461bd.ctex::
+::res://sprite/Sprout Lands - Sprites - Basic pack/::1768966024
+::res://sprite/Sprout Lands - Sprites - Basic pack/Characters/::1768965950
+Basic Charakter Actions.png::CompressedTexture2D::4317532828532765726::1768965949::1768965950::1::::<><><>0<>0<>f3fc6900736975e9f8846ffaa3778cf3<>res://.godot/imported/Basic Charakter Actions.png-92525a81d907a1b9fa7e4b692f84b1c2.ctex::
+Basic Charakter Spritesheet.png::CompressedTexture2D::8219683998085160244::1768965949::1768965950::1::::<><><>0<>0<>9979a14ffef9127a1010bcf77638ae25<>res://.godot/imported/Basic Charakter Spritesheet.png-dd7db23f3fc1fda789eaa10348858c9e.ctex::
+Egg_And_Nest.png::CompressedTexture2D::6722693474518108274::1768965949::1768965950::1::::<><><>0<>0<>ef54c50954d8d6337d1fa75b914c335f<>res://.godot/imported/Egg_And_Nest.png-ccb4cb1c7e75f165883cbb7dae66d7f5.ctex::
+Free Chicken Sprites.png::CompressedTexture2D::3608240319611055752::1768965949::1768965950::1::::<><><>0<>0<>e3a3ade658762a1014aa620e9e2d1f4d<>res://.godot/imported/Free Chicken Sprites.png-f14600f1b6b74ab566ecf8e5c02102b7.ctex::
+Free Cow Sprites.png::CompressedTexture2D::5545328306828823002::1768965949::1768965950::1::::<><><>0<>0<>dd3c8ab2391f768246422fbcb2dfc23d<>res://.godot/imported/Free Cow Sprites.png-de0c69f5f2f6c34597a2d81f553ea852.ctex::
+Tools.png::CompressedTexture2D::3215709974729129316::1768965949::1768965950::1::::<><><>0<>0<>419aba5b5bf267f0387d73271368b29e<>res://.godot/imported/Tools.png-94a4095901080044cae8425d4403c7b5.ctex::
+::res://sprite/Sprout Lands - Sprites - Basic pack/Objects/::1768965950
+Basic Furniture.png::CompressedTexture2D::5951739873581014227::1768965949::1768965950::1::::<><><>0<>0<>6164ebd5ce4cb4f6d93d56d669241719<>res://.godot/imported/Basic Furniture.png-c10b3bf6400737ae5b19ab9c3792fd10.ctex::
+Basic Grass Biom things 1.png::CompressedTexture2D::2013756713393844907::1768965949::1768965950::1::::<><><>0<>0<>d1d90c4ea8fa3e6066413efd424249e3<>res://.godot/imported/Basic Grass Biom things 1.png-c656d5a3b3791793cecd02bf2da9390e.ctex::
+Basic Plants.png::CompressedTexture2D::2171540618014806319::1768965949::1768965950::1::::<><><>0<>0<>98f5f06e1d332d1aa94c0c242070d62f<>res://.godot/imported/Basic Plants.png-1ee934a27be6d6668bb03643932b030d.ctex::
+Basic tools and meterials.png::CompressedTexture2D::4842938317879798065::1768965949::1768965950::1::::<><><>0<>0<>b2a868c06cac824e555cd9a01926405a<>res://.godot/imported/Basic tools and meterials.png-35de203a49c14741d541b5bbba87ff47.ctex::
+Basic_Furniture.png::CompressedTexture2D::804784001515721284::1768965949::1768965950::1::::<><><>0<>0<>0b2037860e1920beaf2d202de1053987<>res://.godot/imported/Basic_Furniture.png-49c6637b12ac6e5e6d8c2b69a594468c.ctex::
+Basic_Grass_Biom_things.png::CompressedTexture2D::4498099060733610454::1768965949::1768965950::1::::<><><>0<>0<>cfa79953a27c862b641482fad345efff<>res://.godot/imported/Basic_Grass_Biom_things.png-1ae42fb20b04de5e3be7f69e7c5aec61.ctex::
+Basic_Plants.png::CompressedTexture2D::614468120861009489::1768965949::1768965950::1::::<><><>0<>0<>fc547582149a8eba5acbe08535e9be34<>res://.godot/imported/Basic_Plants.png-9db6b75fb934349c6dd5cba20fea52ca.ctex::
+Basic_tools_and_meterials.png::CompressedTexture2D::8287332577975616847::1768965949::1768965950::1::::<><><>0<>0<>1b40b4a6e0acd888fa58da27fc54b2a7<>res://.godot/imported/Basic_tools_and_meterials.png-28090bbba7729c56ce3f5dc0360e5602.ctex::
+Chest.png::CompressedTexture2D::4174486960827950763::1768965949::1768965950::1::::<><><>0<>0<>418f2f75083d2db888260eb7e431d8c2<>res://.godot/imported/Chest.png-72bd71d7308777b1bfb7176dc794b9a0.ctex::
+Egg item.png::CompressedTexture2D::3005552452566785116::1768965949::1768965950::1::::<><><>0<>0<>80f7787956266be87b390c8b51112645<>res://.godot/imported/Egg item.png-43d096bb188638bcd1b6d79d012dd104.ctex::
+Egg_item.png::CompressedTexture2D::1565073917282110079::1768965949::1768965950::1::::<><><>0<>0<>7795de90b22d7e9acf4face4a815b612<>res://.godot/imported/Egg_item.png-842f3be4be7e5765144550b11b680485.ctex::
+Free_Chicken_House.png::CompressedTexture2D::6918282392514744762::1768965949::1768965950::1::::<><><>0<>0<>53aeaae38a559dfacd5b877dce9b2abb<>res://.godot/imported/Free_Chicken_House.png-3c8965d1f79bf84231ab5744530182b9.ctex::
+Paths.png::CompressedTexture2D::1536761843018365996::1768965949::1768965950::1::::<><><>0<>0<>c1c29c45274fffaf764258978008c602<>res://.godot/imported/Paths.png-548340bb7f6ad14a9aed46edf7a16ef1.ctex::
+Simple Milk and grass item.png::CompressedTexture2D::4796434920809859467::1768965949::1768965950::1::::<><><>0<>0<>aecfcb72b8acb8855e11b836957c4fbc<>res://.godot/imported/Simple Milk and grass item.png-d15ed4e6053cbd0b8e77bb5f6a72f21c.ctex::
+Simple_Milk_and_grass_item.png::CompressedTexture2D::3260624900776583092::1768965949::1768965950::1::::<><><>0<>0<>f12608200bfc989bd8ce23a5ace107c3<>res://.godot/imported/Simple_Milk_and_grass_item.png-77de31ca033cbf8d7f47c795525208a9.ctex::
+Wood Bridge.png::CompressedTexture2D::1743203485991757136::1768965949::1768965950::1::::<><><>0<>0<>a210c6d1f81103a09c9434a57a59c33e<>res://.godot/imported/Wood Bridge.png-df6c72e64a9fe2c564a057ca6b709034.ctex::
+Wood_Bridge.png::CompressedTexture2D::3432091279626224189::1768965949::1768965950::1::::<><><>0<>0<>3442b3258cd99cf693dde754d761d60e<>res://.godot/imported/Wood_Bridge.png-a2d9e2e00543e11a2d8ddb536fac77dd.ctex::
+::res://sprite/Sprout Lands - Sprites - Basic pack/Sprout Lands color pallet/::1768965950
+Sprout Lands defautlt palette snip.PNG::CompressedTexture2D::4317851934341669822::1768965949::1768965950::1::::<><><>0<>0<>01da93ade7f404c88ea2eef22fac6a18<>res://.godot/imported/Sprout Lands defautlt palette snip.PNG-10335cdb4d39115ab0a8e5c77e431f5e.ctex::
+Sprout Lands defautlt palette.png::CompressedTexture2D::823550422497073489::1768965949::1768965950::1::::<><><>0<>0<>dabba24489548ec4a6da574448d7626d<>res://.godot/imported/Sprout Lands defautlt palette.png-638767112fb13e1b7c0e3eaecbb47f75.ctex::
+::res://sprite/Sprout Lands - Sprites - Basic pack/Tilesets/::1768965950
+Bitmask references 1.png::CompressedTexture2D::970200173504170507::1768965949::1768965950::1::::<><><>0<>0<>2f556d2f429169ede777f75fd3968ceb<>res://.godot/imported/Bitmask references 1.png-96207da8468fc7ad5e65ed53436018c7.ctex::
+Bitmask references 2.png::CompressedTexture2D::4600391372224836325::1768965949::1768965950::1::::<><><>0<>0<>ad185c7da12665736b28d35a7fb7b621<>res://.godot/imported/Bitmask references 2.png-e76abf4965eb8bd9a775c95db6e1e37e.ctex::
+Doors.png::CompressedTexture2D::6664201318431757407::1768965949::1768965950::1::::<><><>0<>0<>1117ba42261f13ed87926e215712396b<>res://.godot/imported/Doors.png-e2747838789adb75c18eb692fecb80e6.ctex::
+Fences.png::CompressedTexture2D::2870257101065342703::1768965949::1768965950::1::::<><><>0<>0<>46dabfbe27dd1172844c4837eb3e14e4<>res://.godot/imported/Fences.png-57089dee84876c2823a1758f3b39de55.ctex::
+Grass.png::CompressedTexture2D::5706709637643141629::1768965950::1768965950::1::::<><><>0<>0<>5ec1270bae845d67dc481184727f6230<>res://.godot/imported/Grass.png-31fce6ee7f8fa41710996199f474f868.ctex::
+Hills.png::CompressedTexture2D::5306688623611144524::1768965950::1768965950::1::::<><><>0<>0<>ad92ef829e7ff14e9da770cab6080b86<>res://.godot/imported/Hills.png-2ce080a125550b6396e2ca70e8753708.ctex::
+Tilled Dirt.png::CompressedTexture2D::1025461603744651673::1768965950::1768965950::1::::<><><>0<>0<>798537ea1089dff9e76afd44f71645ca<>res://.godot/imported/Tilled Dirt.png-7fadc85c96e35b3c04e13518eeb7029a.ctex::
+Tilled_Dirt.png::CompressedTexture2D::6360447786441300600::1768965950::1768965950::1::::<><><>0<>0<>63cd51da46b654206d14f9b860b758b5<>res://.godot/imported/Tilled_Dirt.png-7278489b06624c79bc9d75d473352780.ctex::
+Tilled_Dirt_v2.png::CompressedTexture2D::3232490495990679603::1768965950::1768965950::1::::<><><>0<>0<>ca82eb18d633b5151d1e02c4c3c783f9<>res://.godot/imported/Tilled_Dirt_v2.png-f6f0230650704e38a375dba2cea5552b.ctex::
+Tilled_Dirt_Wide.png::CompressedTexture2D::7184399948079729767::1768965950::1768965950::1::::<><><>0<>0<>17aa10ead0a81f26869bd32bf356dce0<>res://.godot/imported/Tilled_Dirt_Wide.png-60423fc93a15a8ca71544d095d186486.ctex::
+Tilled_Dirt_Wide_v2.png::CompressedTexture2D::4614693427937955465::1768965950::1768965950::1::::<><><>0<>0<>6cb33c3ef738332c77d90b5b533d9d13<>res://.godot/imported/Tilled_Dirt_Wide_v2.png-5b84be4809925d95b9de74ca48b4cbbd.ctex::
+Water.png::CompressedTexture2D::4127075973317442223::1768965950::1768965950::1::::<><><>0<>0<>8c986c669980d645cbb0fdabc68fe5a0<>res://.godot/imported/Water.png-9733da961dff826024ca410d13629c49.ctex::
+Wooden House.png::CompressedTexture2D::3954338513752563426::1768965950::1768965950::1::::<><><>0<>0<>b5509bdcbad1f4229371e43bba5b5526<>res://.godot/imported/Wooden House.png-ef526e4cc3551a0da33072c2e890fb63.ctex::
+Wooden_House_Roof_Tilset.png::CompressedTexture2D::653247640783699059::1768965950::1768965950::1::::<><><>0<>0<>ba4b8f0ccc79cf05a0dd281d6180f5dd<>res://.godot/imported/Wooden_House_Roof_Tilset.png-1ea6acd86243cc9d1519ed36f943571f.ctex::
+Wooden_House_Walls_Tilset.png::CompressedTexture2D::265900142109979358::1768965950::1768965950::1::::<><><>0<>0<>daaa512738dd2e1be8cda103a30ed077<>res://.godot/imported/Wooden_House_Walls_Tilset.png-a47e4c470970605c0330dbdddd2dc54f.ctex::
+::res://sprite/tilesets/::1771382554
+node_2d.tres::TileSet::2928076812701000654::1771382554::0::1::::<><><>0<>0<><>::uid://d12lo8qpfum5::::res://sprite/Sprout Lands - Sprites - Basic pack/Tilesets/Wooden_House_Walls_Tilset.png

@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=4 uid="uid://b57d3j6732sk7"]
+
+[ext_resource type="TileSet" uid="uid://bhym855glf4b7" path="res://sprite/tilesets/node_2d.tres" id="1_rnjyy"]
+[ext_resource type="Script" uid="uid://dqk2tsokstbx2" path="res://scripts/character_body_2d.gd" id="2_4vge2"]
+[ext_resource type="Script" uid="uid://cyb8bj1j2hl7b" path="res://scripts/area_2d.gd" id="3_04qyp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
+size = Vector2(8, 15)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0e48y"]
+load_path = "res://.godot/imported/right.png-0a623adab5f3a6a8d9b72306e51339c7.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
+size = Vector2(10, 20)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Casa" type="Node2D" parent="."]
+
+[node name="chao" type="TileMapLayer" parent="Casa"]
+tile_map_data = PackedByteArray("AAD/////AAABAAEAAAD//wAAAAABAAEAAAAAAAAAAAABAAEAAAAAAP//AAABAAEAAAD+//7/AAABAAEAAAD+////AAABAAEAAAABAP//AAABAAEAAAABAP7/AAABAAEAAAAAAP7/AAABAAEAAAD///7/AAABAAEAAAACAP7/AAABAAEAAAADAP//AAABAAEAAAADAP7/AAABAAEAAAABAP3/AAABAAEAAAAAAP3/AAABAAEAAAD///3/AAABAAEAAAD+//3/AAABAAEAAAD9//7/AAABAAEAAAD9////AAABAAEAAAD8////AAABAAEAAAD8//7/AAABAAEAAAD8//3/AAABAAEAAAD9//3/AAABAAEAAAACAP3/AAABAAEAAAADAP3/AAABAAEAAAD+/wAAAAABAAEAAAD9/wAAAAABAAEAAAD9/wEAAAABAAEAAAD8/wAAAAABAAEAAAD8/wEAAAABAAEAAAD+/wEAAAABAAEAAAD//wEAAAABAAEAAAAAAAEAAAABAAEAAAABAAEAAAABAAEAAAABAAAAAAABAAEAAAACAAAAAAABAAEAAAACAP//AAABAAEAAAACAAEAAAABAAEAAAADAAAAAAABAAEAAAADAAEAAAABAAEAAAD7////AAABAAEAAAA=")
+tile_set = ExtResource("1_rnjyy")
+
+[node name="walls" type="TileMapLayer" parent="Casa"]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAD8//z/AAABAAAAAAD9//z/AAABAAAAAAD+//z/AAABAAAAAAD///z/AAABAAAAAAAAAPz/AAABAAAAAAABAPz/AAABAAAAAAACAPz/AAABAAAAAAADAPz/AAABAAAAAAADAAIAAAABAAIAAAACAAIAAAABAAIAAAABAAIAAAABAAIAAAAAAAIAAAABAAIAAAD//wIAAAABAAIAAAD+/wIAAAABAAIAAAD9/wIAAAABAAIAAAD8/wIAAAABAAIAAAAEAAEAAAACAAEAAAAEAAAAAAACAAEAAAAEAP//AAACAAEAAAAEAP7/AAACAAEAAAAEAP3/AAACAAEAAAD7//3/AAAAAAEAAAD7//7/AAAEAAEAAAD7/wAAAAAEAAAAAAD7/wEAAAAAAAEAAAD7//z/AAAAAAAAAAAEAPz/AAACAAAAAAD7/wIAAAAAAAIAAAAEAAIAAAACAAIAAAA=")
+tile_set = ExtResource("1_rnjyy")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("2_4vge2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_0hol4")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture_filter = 1
+position = Vector2(0.49999908, -3.874303e-07)
+scale = Vector2(0.90624994, 0.87499994)
+texture = SubResource("CompressedTexture2D_0e48y")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(7, 7)
+limit_enabled = false
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_04qyp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-64, -8)
+shape = SubResource("RectangleShape2D_0e48y")

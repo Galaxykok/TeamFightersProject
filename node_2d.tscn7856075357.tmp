@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=4 uid="uid://b57d3j6732sk7"]
+
+[ext_resource type="Script" uid="uid://dqk2tsokstbx2" path="res://character_body_2d.gd" id="1_0e48y"]
+[ext_resource type="TileSet" uid="uid://bhym855glf4b7" path="res://sprite/tilesets/node_2d.tres" id="1_epypp"]
+[ext_resource type="Texture2D" uid="uid://c5s868pc1dw46" path="res://sprite/characters/front.png" id="2_epypp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
+size = Vector2(9, 17)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD/////AAABAAEAAAD//wAAAAABAAEAAAAAAAAAAAABAAEAAAAAAP//AAABAAEAAAD+//7/AAABAAEAAAD+////AAABAAEAAAD+/wAAAAABAAEAAAD+/wEAAAABAAEAAAD//wEAAAABAAEAAAAAAAEAAAABAAEAAAABAAEAAAABAAEAAAABAAAAAAABAAEAAAABAP//AAABAAEAAAABAP7/AAABAAEAAAAAAP7/AAABAAEAAAD///7/AAABAAEAAAACAP7/AAABAAEAAAACAP//AAABAAEAAAADAP//AAABAAEAAAADAAAAAAABAAEAAAADAAEAAAABAAEAAAACAAEAAAABAAEAAAACAAAAAAABAAEAAAADAP7/AAABAAEAAAABAP3/AAABAAEAAAAAAP3/AAABAAEAAAD///3/AAABAAEAAAD+//3/AAABAAEAAAD9//7/AAABAAEAAAD9////AAABAAEAAAD9/wAAAAABAAEAAAD8/wEAAAABAAEAAAD9/wEAAAABAAEAAAD8////AAABAAEAAAD8//7/AAABAAEAAAD8//3/AAABAAEAAAD8/wAAAAABAAEAAAD9//3/AAABAAEAAAACAP3/AAABAAEAAAA=")
+tile_set = ExtResource("1_epypp")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_0e48y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_0hol4")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture_filter = 1
+texture = ExtResource("2_epypp")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
