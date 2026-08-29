@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjo7e2yjs2gat"]
+
+[ext_resource type="Texture2D" uid="uid://bgjgyehww0h4c" path="res://sprite/moveis/machine.png" id="1_c321y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c321y"]
+size = Vector2(64, 64)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_c321y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_c321y")

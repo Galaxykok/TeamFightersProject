@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1js6pgwoh2mg"]
+
+[ext_resource type="Texture2D" uid="uid://ckbh6dln56nbx" path="res://sprite/moveis/Cadeira3.png" id="1_x72fm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x72fm"]
+size = Vector2(64, 64)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_x72fm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_x72fm")

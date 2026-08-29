@@ -1,0 +1,115 @@
+[gd_scene load_steps=13 format=3 uid="uid://dvvbfrpy53ua2"]
+
+[ext_resource type="Texture2D" uid="uid://0c81t2kaqk34" path="res://sprite/lugares/interno.png" id="1_oan27"]
+[ext_resource type="PackedScene" uid="uid://dbvx3ec17yenv" path="res://prefabs/cadeira1.tscn" id="2_lseff"]
+[ext_resource type="PackedScene" uid="uid://b1js6pgwoh2mg" path="res://prefabs/cadeira3.tscn" id="3_yhust"]
+[ext_resource type="PackedScene" uid="uid://d153rhjkrvkot" path="res://prefabs/cadeira4.tscn" id="4_ku56t"]
+[ext_resource type="PackedScene" uid="uid://cryhv61ejxr81" path="res://prefabs/mesa.tscn" id="5_y61m5"]
+[ext_resource type="PackedScene" uid="uid://dc76cy127ldq7" path="res://prefabs/cadeira2.tscn" id="6_f7ucs"]
+[ext_resource type="PackedScene" uid="uid://cjo7e2yjs2gat" path="res://prefabs/machine.tscn" id="7_iyn82"]
+[ext_resource type="PackedScene" uid="uid://dgsdey8x8kij6" path="res://prefabs/Character.tscn" id="8_lseff"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jv4ns"]
+size = Vector2(10.000008, 112.16537)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sscs6"]
+size = Vector2(127.95277, 10.787403)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c401a"]
+size = Vector2(10.039379, 112.16537)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sm7cj"]
+size = Vector2(108.03151, 13.779537)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Cena" type="Node2D" parent="."]
+scale = Vector2(1.5, 1.5)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Cena"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Cena/StaticBody2D"]
+texture_filter = 1
+texture = ExtResource("1_oan27")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Cena/StaticBody2D"]
+position = Vector2(58.97637, 2.9724422)
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_jv4ns")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cena/StaticBody2D"]
+position = Vector2(1.4901159e-08, -58.582672)
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_sscs6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Cena/StaticBody2D"]
+position = Vector2(-58.95669, 2.9724414)
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_c401a")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Cena/StaticBody2D"]
+position = Vector2(0.11810842, 52.16535)
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_sm7cj")
+
+[node name="Moveis" type="Node2D" parent="Cena"]
+
+[node name="StaticBody2D" parent="Cena/Moveis" instance=ExtResource("2_lseff")]
+position = Vector2(-35.23622, -37.20472)
+scale = Vector2(0.19685037, 0.19685037)
+
+[node name="StaticBody2D3" parent="Cena/Moveis" instance=ExtResource("3_yhust")]
+position = Vector2(-43.700787, -30.51181)
+scale = Vector2(0.19685037, 0.19685037)
+
+[node name="StaticBody2D4" parent="Cena/Moveis" instance=ExtResource("4_ku56t")]
+position = Vector2(-26.77165, -30.51181)
+scale = Vector2(0.19685037, 0.19685037)
+
+[node name="StaticBody2D2" parent="Cena/Moveis" instance=ExtResource("5_y61m5")]
+position = Vector2(-35.23622, -30.708658)
+scale = Vector2(0.19685037, 0.19685037)
+
+[node name="StaticBody2D5" parent="Cena/Moveis" instance=ExtResource("6_f7ucs")]
+position = Vector2(-35.23622, -25)
+scale = Vector2(0.19685037, 0.19685037)
+
+[node name="StaticBody2D6" parent="Cena/Moveis" instance=ExtResource("7_iyn82")]
+position = Vector2(28.543304, -29.724411)
+scale = Vector2(0.3, 0.3)
+
+[node name="StaticBody2D7" parent="Cena/Moveis" instance=ExtResource("7_iyn82")]
+position = Vector2(23.228348, 11.614173)
+scale = Vector2(0.3, 0.3)
+
+[node name="StaticBody2D8" parent="Cena/Moveis" instance=ExtResource("4_ku56t")]
+position = Vector2(41.92913, 12.795272)
+scale = Vector2(0.19699998, 0.19699998)
+
+[node name="StaticBody2D9" parent="Cena/Moveis" instance=ExtResource("3_yhust")]
+position = Vector2(9.645668, -27.559055)
+scale = Vector2(0.19685037, 0.19685037)
+
+[node name="StaticBody2D10" parent="Cena/Moveis" instance=ExtResource("2_lseff")]
+position = Vector2(-18.110237, 3.937008)
+scale = Vector2(0.19685037, 0.19685037)
+
+[node name="StaticBody2D11" parent="Cena/Moveis" instance=ExtResource("3_yhust")]
+position = Vector2(-26.574802, 10.62992)
+scale = Vector2(0.19685037, 0.19685037)
+
+[node name="StaticBody2D12" parent="Cena/Moveis" instance=ExtResource("4_ku56t")]
+position = Vector2(-9.645668, 10.62992)
+scale = Vector2(0.19685037, 0.19685037)
+
+[node name="StaticBody2D13" parent="Cena/Moveis" instance=ExtResource("5_y61m5")]
+position = Vector2(-18.110237, 10.433072)
+scale = Vector2(0.19685037, 0.19685037)
+
+[node name="StaticBody2D14" parent="Cena/Moveis" instance=ExtResource("6_f7ucs")]
+position = Vector2(-18.110237, 16.141731)
+scale = Vector2(0.19685037, 0.19685037)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("8_lseff")]
+position = Vector2(5, 39)
+safe_margin = 0.001

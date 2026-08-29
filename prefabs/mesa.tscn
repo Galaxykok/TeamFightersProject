@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cryhv61ejxr81"]
+
+[ext_resource type="Texture2D" uid="uid://yw5ikg5yhqb4" path="res://sprite/moveis/mesa.png" id="1_36sse"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ssxt"]
+size = Vector2(64, 64)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_36sse")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1ssxt")

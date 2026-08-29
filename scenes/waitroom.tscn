@@ -1,0 +1,92 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbsdp6qodusys"]
+
+[ext_resource type="Script" uid="uid://csdrkycv3ldv5" path="res://scripts/waitroom.gd" id="1_46rjp"]
+[ext_resource type="FontFile" uid="uid://b1pa00fuh1fxm" path="res://sprite/Fonte/PixelGameFont.ttf" id="1_sddp2"]
+
+[sub_resource type="Curve" id="Curve_1svla"]
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_ots34"]
+curve_x = SubResource("Curve_1svla")
+
+[sub_resource type="Theme" id="Theme_46rjp"]
+default_font = ExtResource("1_sddp2")
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_sddp2")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_46rjp")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = SubResource("CurveXYZTexture_ots34")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = 165.82
+offset_right = 91.0
+offset_bottom = 252.81995
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_46rjp")
+text = "Play"
+
+[node name="Panel1" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.11128472
+anchor_top = 0.1574074
+anchor_right = 0.3717014
+anchor_bottom = 0.72839504
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ListaJogadores1" type="VBoxContainer" parent="Panel1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6102431
+anchor_top = 0.16049382
+anchor_right = 0.8680556
+anchor_bottom = 0.7299383
+offset_right = 3.0
+offset_bottom = 0.9999695
+grow_horizontal = 0
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ListaJogadores2" type="VBoxContainer" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

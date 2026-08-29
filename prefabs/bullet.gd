@@ -1,13 +1,17 @@
-extends Node2D
+extends CharacterBody2D
 
-var direction = Vector2.ZERO
-var velocity = 400
 var max_distance = 500.0
-@onready var start_position = global_position # Guarda onde a bala nasceu
+var direction = Vector2.ZERO
 
-func _process(delta: float) -> void:
-	# Movimentação
-	position += direction * velocity * delta
-	# distance_to compara a posição atual com a inicial
+@onready var start_position = global_position
+
+func _physics_process(delta: float) -> void:
+	var velocity = 400
+	var motion = direction * velocity * delta
+	var collision = move_and_collide(motion)
+
+	if collision:
+		queue_free()
+
 	if global_position.distance_to(start_position) >= max_distance:
 		queue_free()
