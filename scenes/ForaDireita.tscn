@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://br14hs1onlpib"]
 
+[ext_resource type="Script" uid="uid://bf5g5c117rhey" path="res://scripts/scripts_scenarios/fora_direita.gd" id="1_e8xvf"]
 [ext_resource type="Texture2D" uid="uid://cqe3pyn0sqtx4" path="res://sprite/lugares/Fora.png" id="1_hh0uc"]
-[ext_resource type="PackedScene" uid="uid://dgsdey8x8kij6" path="res://prefabs/Character.tscn" id="2_hh0uc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ps7bg"]
 size = Vector2(258.66138, 20)
@@ -41,6 +41,7 @@ func _on_body_exited(body: Node2D) -> void:
 size = Vector2(12.954029, 20)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_e8xvf")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 scale = Vector2(-0.15, 0.15)
@@ -95,11 +96,11 @@ rotation = 1.1780972
 scale = Vector2(2.88, 0.9999999)
 shape = SubResource("RectangleShape2D_8vdbe")
 
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="StaticBody2D"]
+_spawnable_scenes = PackedStringArray("uid://dgsdey8x8kij6")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(11.5, 11.5)
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_hh0uc")]
-position = Vector2(40, 11.000001)
 
 [connection signal="body_entered" from="StaticBody2D/Door" to="StaticBody2D/Door" method="_on_body_entered"]
 [connection signal="body_exited" from="StaticBody2D/Door" to="StaticBody2D/Door" method="_on_body_exited"]

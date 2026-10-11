@@ -1,17 +1,20 @@
-extends Node2D
+extends CharacterBody2D
 
-var max_distance = 500.0
-var direction = Vector2.ZERO
+var max_distance: float = 500.0
+var speed: float = 400.0
+var direction: Vector2 = Vector2.ZERO
+var start_position: Vector2
 
-@onready var start_position = global_position
+func _ready() -> void:
+	start_position = global_position
 
 func _physics_process(delta: float) -> void:
-	var velocity = 400
-	var motion = direction * velocity * delta
-	var collision = $CharacterBody2D.move_and_collide(motion)
+	var motion = direction * speed * delta
+	var collision = move_and_collide(motion)
 
 	if collision:
 		queue_free()
+		return
 
 	if global_position.distance_to(start_position) >= max_distance:
 		queue_free()

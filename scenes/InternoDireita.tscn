@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://dvvbfrpy53ua2"]
+[gd_scene load_steps=14 format=3 uid="uid://dvvbfrpy53ua2"]
 
 [ext_resource type="Texture2D" uid="uid://0c81t2kaqk34" path="res://sprite/lugares/interno.png" id="1_oan27"]
+[ext_resource type="Script" uid="uid://ccmqbyoduobii" path="res://scripts/scripts_scenarios/interno_direita.gd" id="1_yhust"]
 [ext_resource type="PackedScene" uid="uid://dbvx3ec17yenv" path="res://prefabs/cadeira1.tscn" id="2_lseff"]
 [ext_resource type="PackedScene" uid="uid://b1js6pgwoh2mg" path="res://prefabs/cadeira3.tscn" id="3_yhust"]
 [ext_resource type="PackedScene" uid="uid://d153rhjkrvkot" path="res://prefabs/cadeira4.tscn" id="4_ku56t"]
@@ -22,6 +23,7 @@ size = Vector2(10.039379, 112.16537)
 size = Vector2(108.03151, 13.779537)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_yhust")
 
 [node name="Cena" type="Node2D" parent="."]
 scale = Vector2(1.5, 1.5)

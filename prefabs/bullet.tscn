@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://g576vloe6tu3"]
 
 [ext_resource type="Texture2D" uid="uid://dgtj038e4sapt" path="res://sprite/gun/bullet.png" id="1_fh0yl"]
-[ext_resource type="Script" uid="uid://bseeu71qkkhmk" path="res://prefabs/bullet.gd" id="1_lv25w"]
+[ext_resource type="Script" uid="uid://dnj8ykry6rngw" path="res://scripts/scripts_character/bullet.gd" id="1_lv25w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lv25w"]
 size = Vector2(3, 3)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Bullet" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_lv25w")
 

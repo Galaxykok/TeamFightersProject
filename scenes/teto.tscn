@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://cq68ib843sh02"]
+[gd_scene load_steps=12 format=3 uid="uid://cq68ib843sh02"]
 
 [ext_resource type="Texture2D" uid="uid://b3l3yhcqkggvl" path="res://sprite/lugares/teto.png" id="1_482a3"]
+[ext_resource type="Script" uid="uid://0dmkjvsixwqv" path="res://scripts/scripts_scenarios/teto.gd" id="1_u64is"]
 [ext_resource type="PackedScene" uid="uid://dgsdey8x8kij6" path="res://prefabs/Character.tscn" id="2_syo05"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_syo05"]
@@ -28,6 +29,7 @@ size = Vector2(28, 24)
 size = Vector2(296.25, 20.25)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_u64is")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

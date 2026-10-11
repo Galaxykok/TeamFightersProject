@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://b7ss5rgdpe0j7"]
+
+[ext_resource type="Texture2D" uid="uid://m1bfq5vwpk6m" path="res://sprite/lugares/Corredor.png" id="1_4nesr"]
+[ext_resource type="Script" uid="uid://bagmj2lcg44fw" path="res://scripts/scripts_scenarios/corredor.gd" id="1_nsyj7"]
+[ext_resource type="PackedScene" uid="uid://dgsdey8x8kij6" path="res://prefabs/Character.tscn" id="2_nsyj7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qy4q3"]
+size = Vector2(256, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4o6da"]
+size = Vector2(20, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m700n"]
+size = Vector2(2, 20)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_nsyj7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Corredor" type="Sprite2D" parent="StaticBody2D"]
+texture_filter = 1
+texture_repeat = 1
+texture = ExtResource("1_4nesr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -36)
+shape = SubResource("RectangleShape2D_qy4q3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 34)
+shape = SubResource("RectangleShape2D_qy4q3")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(138, -1)
+shape = SubResource("RectangleShape2D_4o6da")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-138, -1)
+shape = SubResource("RectangleShape2D_4o6da")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-78, 14)
+shape = SubResource("RectangleShape2D_m700n")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(78, 14)
+shape = SubResource("RectangleShape2D_m700n")
+
+[node name="CharacterBody2D" parent="StaticBody2D" instance=ExtResource("2_nsyj7")]
+position = Vector2(-88, 14)

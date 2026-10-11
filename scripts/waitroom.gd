@@ -48,10 +48,8 @@ func _on_button_pressed() -> void:
 		
 @rpc("authority", "call_local")
 func iniciar_partida_rpc():
-	# Descobre o ID local (de quem está rodando este código agora)
 	var meu_id = multiplayer.get_unique_id()
 	
-	# Pega os dados do jogador atual no dicionário
 	if GameManager.players.has(meu_id):
 		var meu_time = GameManager.players[meu_id]["team"]
 		if meu_time == 1:

@@ -1,0 +1,13 @@
+res://scenes/ForaDireita.tscn
+res://scripts/scripts_character/gun.gd
+res://prefabs/Character.tscn
+res://scripts/scripts_character/character.gd
+res://scenes/teto.tscn
+res://scripts/scripts_character/bullet.gd
+res://scenes/InternoDireita.tscn
+res://prefabs/bullet.tscn
+res://scenes/ForaEsquerda.tscn
+res://scenes/InternoEsquerda.tscn
+res://scenes/interno_direita.gd
+res://scenes/fora_direita.gd
+res://scenes/Corredor.tscn

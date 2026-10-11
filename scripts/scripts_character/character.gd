@@ -7,15 +7,14 @@ var platform = false
 #var target_object: Node2D
 #@onready var hand_position: Marker2D =  $HandPosition
 const JUMP_VELOCITY = -400.0
-
-var current_direction = Vector2.ZERO
+var meu_id = multiplayer.get_unique_id()
+@onready var current_direction = Vector2.ZERO
 
 func _ready() -> void:
 	pass
 
 func change_sprite(direction) -> void:
-	# Se for o modo plataforma, a direção será apenas um número (float)
-	if team == 1:
+	if GameManager.players[meu_id]["team"] == 1:
 		if direction is float or direction is int:
 			if direction > 0:
 				$Sprite2D.texture = preload("res://sprite/characters/right.png")
@@ -49,6 +48,8 @@ func change_sprite(direction) -> void:
 			$Sprite2D.texture = preload("res://sprite/characters/back2.png")
 
 func _physics_process(delta: float) -> void:
+	if not is_multiplayer_authority():
+		return
 	if platform:
 		_move_platform(delta)
 	else:

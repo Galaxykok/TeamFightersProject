@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2w3uctw6pbh6"]
+[gd_scene load_steps=10 format=3 uid="uid://b2w3uctw6pbh6"]
 
 [ext_resource type="Texture2D" uid="uid://cqe3pyn0sqtx4" path="res://sprite/lugares/Fora.png" id="1_8vdbe"]
+[ext_resource type="Script" uid="uid://cuc1b83dygcit" path="res://scripts/scripts_scenarios/fora_esquerda.gd" id="1_tgc6b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ps7bg"]
 size = Vector2(258.66138, 20)
@@ -40,6 +41,7 @@ func _on_body_exited(body: Node2D) -> void:
 size = Vector2(12.954029, 20)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_tgc6b")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 scale = Vector2(0.15, 0.15)
@@ -93,6 +95,9 @@ position = Vector2(36.072083, 13.588509)
 rotation = 1.1780972
 scale = Vector2(2.88, 0.9999999)
 shape = SubResource("RectangleShape2D_8vdbe")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="StaticBody2D"]
+_spawnable_scenes = PackedStringArray("uid://dgsdey8x8kij6")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(11.5, 11.5)

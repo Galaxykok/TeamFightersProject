@@ -36,11 +36,11 @@ func _process(delta: float) -> void:
 		time_since_last_shot = shoot_cooldown
 			
 
-func shoot(direction: Vector2):
-	var player = get_parent()
+func shoot(bulletdirection: Vector2):
 	var b = bullet.instantiate()
+	if bulletdirection == Vector2.ZERO:
+		bulletdirection = Vector2.UP
 	get_tree().current_scene.add_child(b)
-	if direction == Vector2.ZERO: direction = Vector2.UP
-	var spawn_offset = direction * 20.0 
+	var spawn_offset = bulletdirection * 20.0
 	b.global_position = global_position + spawn_offset
-	b.direction = direction
+	b.direction = bulletdirection
