@@ -1,0 +1,127 @@
+[gd_scene load_steps=15 format=3 uid="uid://ch65ouxbs3now"]
+
+[ext_resource type="FontFile" uid="uid://b1pa00fuh1fxm" path="res://sprite/Fonte/PixelGameFont.ttf" id="1_fgkus"]
+[ext_resource type="Script" uid="uid://cac6ildyg20pr" path="res://scripts/title.gd" id="2_sa3yf"]
+
+[sub_resource type="Curve" id="Curve_fgkus"]
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_sa3yf"]
+curve_x = SubResource("Curve_fgkus")
+
+[sub_resource type="Theme" id="Theme_fgkus"]
+default_font = ExtResource("1_fgkus")
+
+[sub_resource type="LabelSettings" id="LabelSettings_fgkus"]
+font_size = 31
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4lrb"]
+bg_color = Color(0, 0.72865295, 0.0826311, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mgrm8"]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dc4i4"]
+bg_color = Color(0, 0.7263894, 0.16506925, 1)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.97, 0.97, 0.97, 1)
+
+[sub_resource type="Theme" id="Theme_e54dn"]
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_fgkus")
+Button/styles/hover = SubResource("StyleBoxFlat_s4lrb")
+Button/styles/normal = SubResource("StyleBoxFlat_mgrm8")
+Button/styles/pressed = SubResource("StyleBoxFlat_dc4i4")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3yumr"]
+bg_color = Color(0.82, 0.17219998, 0.1829965, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cs5ya"]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mykxm"]
+
+[sub_resource type="Theme" id="Theme_tklts"]
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_fgkus")
+Button/styles/hover = SubResource("StyleBoxFlat_3yumr")
+Button/styles/normal = SubResource("StyleBoxFlat_cs5ya")
+Button/styles/pressed = SubResource("StyleBoxFlat_mykxm")
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = SubResource("CurveXYZTexture_sa3yf")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_fgkus")
+text = "Team Fighters Project"
+label_settings = SubResource("LabelSettings_fgkus")
+
+[node name="start_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_e54dn")
+text = "Start"
+script = ExtResource("2_sa3yf")
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "192.168.15.99"
+
+[node name="join_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_e54dn")
+text = "Join"
+script = ExtResource("2_sa3yf")
+
+[node name="quit_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_tklts")
+text = "Quit Game"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/start_btn" to="MarginContainer/HBoxContainer/VBoxContainer/start_btn" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/join_btn" to="MarginContainer/HBoxContainer/VBoxContainer/start_btn" method="_on_join_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/quit_btn" to="MarginContainer/HBoxContainer/VBoxContainer/start_btn" method="_on_quit_btn_pressed"]

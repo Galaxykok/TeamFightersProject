@@ -1,0 +1,106 @@
+[gd_scene load_steps=10 format=3 uid="uid://b2w3uctw6pbh6"]
+
+[ext_resource type="Texture2D" uid="uid://cqe3pyn0sqtx4" path="res://sprite/lugares/Fora.png" id="1_8vdbe"]
+[ext_resource type="Script" uid="uid://cuc1b83dygcit" path="res://scripts/scripts_scenarios/fora_esquerda.gd" id="1_tgc6b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ps7bg"]
+size = Vector2(258.66138, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dttf5"]
+size = Vector2(1278, 114)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_puxpe"]
+size = Vector2(87.5, 589)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u8ski"]
+size = Vector2(884.93945, 185.40009)
+
+[sub_resource type="GDScript" id="GDScript_eoiax"]
+script/source = "extends Area2D
+var entered: bool = false
+var player: CharacterBody2D
+
+func _process(delta: float) -> void:
+	if entered and Input.is_action_just_pressed(\"enter\"):
+		pass
+func _on_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		entered = true
+		player = body
+
+
+func _on_body_exited(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		entered = false
+		player = null
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ixnxk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vdbe"]
+size = Vector2(12.954029, 20)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_tgc6b")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(0.15, 0.15)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture_filter = 1
+scale = Vector2(5.08, 5.08)
+texture = ExtResource("1_8vdbe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(5.999939, -199.99998)
+scale = Vector2(5.08, 5.08)
+shape = SubResource("RectangleShape2D_ps7bg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-20, 381)
+shape = SubResource("RectangleShape2D_dttf5")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-692.75, 92.5)
+shape = SubResource("RectangleShape2D_puxpe")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(317, 157.99998)
+rotation = 1.1780972
+shape = SubResource("RectangleShape2D_u8ski")
+
+[node name="Door" type="Area2D" parent="StaticBody2D"]
+position = Vector2(125.515, 122.915)
+scale = Vector2(8.572, 8.572)
+script = SubResource("GDScript_eoiax")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Door"]
+shape = SubResource("CircleShape2D_ixnxk")
+
+[node name="Rooftop" type="Area2D" parent="StaticBody2D"]
+position = Vector2(83.135, -20.48)
+scale = Vector2(3.38, 3.38)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Rooftop"]
+rotation = 1.1780972
+scale = Vector2(2.88, 0.99999994)
+shape = SubResource("RectangleShape2D_8vdbe")
+
+[node name="Rooftop2" type="Area2D" parent="StaticBody2D"]
+position = Vector2(92.4, 209.795)
+scale = Vector2(3.38, 3.38)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Rooftop2"]
+position = Vector2(36.072083, 13.588509)
+rotation = 1.1780972
+scale = Vector2(2.88, 0.9999999)
+shape = SubResource("RectangleShape2D_8vdbe")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="StaticBody2D"]
+_spawnable_scenes = PackedStringArray("uid://dgsdey8x8kij6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(11.5, 11.5)
+
+[connection signal="body_entered" from="StaticBody2D/Door" to="StaticBody2D/Door" method="_on_body_entered"]
+[connection signal="body_exited" from="StaticBody2D/Door" to="StaticBody2D/Door" method="_on_body_exited"]

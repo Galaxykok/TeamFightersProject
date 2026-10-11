@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://dgsdey8x8kij6"]
+
+[ext_resource type="Script" uid="uid://dqk2tsokstbx2" path="res://scripts/scripts_character/character.gd" id="1_p8kok"]
+[ext_resource type="Script" uid="uid://d1blgj4alvm1x" path="res://scripts/scripts_character/gun.gd" id="2_lewcy"]
+[ext_resource type="Texture2D" uid="uid://dnxt25ieh0dsh" path="res://sprite/gun/gun_right.png" id="3_aftiu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6nhow"]
+size = Vector2(8, 15)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lewcy"]
+load_path = "res://.godot/imported/right.png-0a623adab5f3a6a8d9b72306e51339c7.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aftiu"]
+radius = 9.055386
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ur55y"]
+size = Vector2(11, 3)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+scale = Vector2(1.3, 1.3)
+slide_on_ceiling = false
+script = ExtResource("1_p8kok")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_6nhow")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0.49999908, -3.874303e-07)
+scale = Vector2(0.90624994, 0.87499994)
+texture = SubResource("CompressedTexture2D_lewcy")
+
+[node name="Range" type="Area2D" parent="." groups=["pickable"]]
+disable_mode = 1
+input_pickable = false
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_aftiu")
+
+[node name="HandPosition" type="Marker2D" parent="."]
+position = Vector2(0, 2.305)
+
+[node name="Gun" type="StaticBody2D" parent="."]
+position = Vector2(0, 3.805)
+script = ExtResource("2_lewcy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gun"]
+process_mode = 3
+physics_interpolation_mode = 2
+shape = SubResource("RectangleShape2D_ur55y")
+one_way_collision = true
+one_way_collision_margin = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Gun"]
+texture_filter = 1
+scale = Vector2(0.53, 0.53)
+texture = ExtResource("3_aftiu")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(8.45, 8.45)
+limit_enabled = false
+limit_left = -128
+limit_top = -64
+limit_right = 128
+limit_bottom = 64
+
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]

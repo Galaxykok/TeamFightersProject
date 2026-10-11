@@ -1,0 +1,72 @@
+[gd_scene load_steps=12 format=3 uid="uid://cq68ib843sh02"]
+
+[ext_resource type="Texture2D" uid="uid://b3l3yhcqkggvl" path="res://sprite/lugares/teto.png" id="1_482a3"]
+[ext_resource type="Script" uid="uid://0dmkjvsixwqv" path="res://scripts/scripts_scenarios/teto.gd" id="1_u64is"]
+[ext_resource type="PackedScene" uid="uid://dgsdey8x8kij6" path="res://prefabs/Character.tscn" id="2_syo05"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_syo05"]
+size = Vector2(256, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bvdsu"]
+size = Vector2(20, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6lt68"]
+size = Vector2(20, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lvxrx"]
+size = Vector2(28, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5uxi6"]
+size = Vector2(28, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ux2e2"]
+size = Vector2(28, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hiqxc"]
+size = Vector2(28, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s45yy"]
+size = Vector2(296.25, 20.25)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_u64is")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture_filter = 1
+texture = ExtResource("1_482a3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 47)
+shape = SubResource("RectangleShape2D_syo05")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-138, 0)
+shape = SubResource("RectangleShape2D_bvdsu")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(138, 0)
+shape = SubResource("RectangleShape2D_6lt68")
+
+[node name="CharacterBody2D" parent="StaticBody2D" instance=ExtResource("2_syo05")]
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(23, 17.5)
+shape = SubResource("RectangleShape2D_lvxrx")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(85, 18)
+shape = SubResource("RectangleShape2D_5uxi6")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-34, 18)
+shape = SubResource("RectangleShape2D_ux2e2")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-88, 18)
+shape = SubResource("RectangleShape2D_hiqxc")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0.125, -74.125)
+shape = SubResource("RectangleShape2D_s45yy")

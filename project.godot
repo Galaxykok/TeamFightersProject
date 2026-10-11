@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="TeamFightersProject"
-run/main_scene="res://scenes/hall.tscn"
+run/main_scene="uid://ch65ouxbs3now"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
-GameState="*res://scripts/GameState.gd"
+GameManager="*res://scripts/GameManager.gd"
 
 [display]
 
@@ -74,3 +74,4 @@ jump={
 [rendering]
 
 renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
